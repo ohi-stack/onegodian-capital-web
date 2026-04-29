@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const navItems = [
@@ -15,7 +16,15 @@ export default function PageShell({ children }: Readonly<{ children: React.React
     <div className="site-shell">
       <header className="site-header">
         <div className="site-header-inner">
-          <Link className="brand" href="/">ONEGODIAN CAPITAL</Link>
+          <Link className="brand brand-logo" href="/" aria-label="ONEGODIAN Capital home">
+            <Image
+              src="/onegodian-capital-logo.svg"
+              alt="ONEGODIAN — In God We Build"
+              width={560}
+              height={160}
+              priority
+            />
+          </Link>
           <nav className="nav-links" aria-label="Primary navigation">
             {navItems.map(([label, href]) => (
               <Link key={href} href={href}>{label}</Link>
