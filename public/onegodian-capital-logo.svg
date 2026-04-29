@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="320" viewBox="0 0 1120 320" role="img" aria-labelledby="title desc">
+  <title id="title">ONEGODIAN Capital Logo</title>
+  <desc id="desc">Gold ONEGODIAN logo with institutional pillar mark and In God We Build tagline.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff1a8"/>
+      <stop offset="0.28" stop-color="#e3bd54"/>
+      <stop offset="0.58" stop-color="#b78322"/>
+      <stop offset="1" stop-color="#f5d36b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#d9b24c" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#061a33" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="1120" height="320" fill="#061a33"/>
+  <ellipse cx="220" cy="160" rx="210" ry="120" fill="url(#glow)"/>
+  <g filter="url(#softShadow)">
+    <circle cx="160" cy="160" r="104" fill="none" stroke="url(#gold)" stroke-width="24"/>
+    <path d="M118 112H202" stroke="url(#gold)" stroke-width="15" stroke-linecap="round"/>
+    <path d="M128 132H192" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M132 208H188" stroke="url(#gold)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M140 140V204M160 140V204M180 140V204" stroke="url(#gold)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <text x="310" y="142" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" letter-spacing="7">ONEGODIAN</text>
+    <line x1="315" y1="190" x2="420" y2="190" stroke="url(#gold)" stroke-width="4" opacity="0.75"/>
+    <text x="450" y="203" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700" letter-spacing="12">IN GOD WE BUILD</text>
+    <line x1="875" y1="190" x2="985" y2="190" stroke="url(#gold)" stroke-width="4" opacity="0.75"/>
+  </g>
+</svg>
