@@ -11,6 +11,35 @@ const navItems = [
   ['Support', '/support'],
 ];
 
+const footerGroups = [
+  {
+    title: 'Portal',
+    links: [
+      ['Home', '/'],
+      ['Offerings', '/offerings'],
+      ['Investor Portal', '/investor-portal'],
+      ['Certificates', '/certificates'],
+    ],
+  },
+  {
+    title: 'Disclosures',
+    links: [
+      ['Disclosure Center', '/disclosures'],
+      ['Risk Disclosures', '/risk-disclosures'],
+      ['Legal Notices', '/legal-notices'],
+      ['Compliance Status', '/compliance-status'],
+    ],
+  },
+  {
+    title: 'Policies',
+    links: [
+      ['Refund & Cancellation', '/refund-cancellation-policy'],
+      ['Data Retention', '/data-retention-policy'],
+      ['Support', '/support'],
+    ],
+  },
+];
+
 export default function PageShell({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="site-shell">
@@ -34,8 +63,26 @@ export default function PageShell({ children }: Readonly<{ children: React.React
       </header>
       <main>{children}</main>
       <footer className="site-footer">
-        <div className="site-footer-inner">
-          ONEGODIAN Capital Portal is software infrastructure for recordkeeping, disclosure review, and certificate verification. Legal review is required before live capital workflows.
+        <div className="site-footer-inner footer-grid">
+          <div className="footer-brand">
+            <Image
+              src="/onegodian-capital-logo.svg"
+              alt="ONEGODIAN — In God We Build"
+              width={360}
+              height={103}
+            />
+            <p>
+              ONEGODIAN Capital Portal is software infrastructure for recordkeeping, disclosure review, and certificate verification. Legal review is required before live capital workflows.
+            </p>
+          </div>
+          {footerGroups.map((group) => (
+            <div className="footer-links" key={group.title}>
+              <h2>{group.title}</h2>
+              {group.links.map(([label, href]) => (
+                <Link key={href} href={href}>{label}</Link>
+              ))}
+            </div>
+          ))}
         </div>
       </footer>
     </div>
