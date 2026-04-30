@@ -1,0 +1,1 @@
+export default function Offerings(){return(<main className='section'><div className='wrap'><h1>Capital Offerings</h1><p className='lead'>All offerings are subject to disclosure review, eligibility verification, and production readiness approval.</p></div></main>)}
