@@ -1,0 +1,1 @@
+export default function Investor(){return(<main className='section'><div className='wrap'><h1>Investor Portal</h1><p className='lead'>Access instruments, certificates, disclosures, and ledger records.</p></div></main>)}
