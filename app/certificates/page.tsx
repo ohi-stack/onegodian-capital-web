@@ -1,0 +1,1 @@
+export default function Certificates(){return(<main className='section'><div className='wrap'><h1>Certificate Verification</h1><p className='lead'>Verify certificate authenticity and ownership records.</p></div></main>)}
