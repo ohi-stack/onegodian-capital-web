@@ -1,0 +1,1 @@
+export default function Disclosures(){return(<main className='section'><div className='wrap'><h1>Disclosure Center</h1><p className='lead'>All capital participation requires disclosure review and acknowledgement.</p></div></main>)}
