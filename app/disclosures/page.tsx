@@ -36,10 +36,18 @@ export default function Disclosures() {
     <main className="section">
       <div className="wrap">
         <div style={{ marginBottom: 34 }}>
-          <div className="eyebrow">Compliance Workflow</div>
+          <div className="eyebrow">Disclosure Center</div>
           <h1>Disclosure Center</h1>
           <p className="lead">
             All capital participation requires disclosure review and acknowledgement.
+          </p>
+        </div>
+
+        <div className="notice" style={{ marginBottom: 34 }}>
+          <strong>Disclosure Review Required</strong>
+          <p>
+            All capital participation requires disclosure review and acknowledgement before a record can move forward.
+            This portal supports documentation, recordkeeping, disclosure review, acknowledgement tracking, and verification support.
           </p>
         </div>
 
