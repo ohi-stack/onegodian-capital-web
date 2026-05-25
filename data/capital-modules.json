@@ -1,0 +1,53 @@
+{
+  "id": "capital",
+  "name": "Capital.OneGodian.com",
+  "version": "0.1.0",
+  "host": "capital.onegodian.com",
+  "runtime": "node-plus-wordpress-plugin",
+  "role": "capital, disclosure, ODC, Zolfi, and Instryx consolidation node",
+  "syncTarget": "https://app.onegodian.com",
+  "modules": [
+    {
+      "id": "disclosure-center",
+      "name": "Disclosure Center",
+      "route": "/disclosures",
+      "status": "required",
+      "purpose": "capital participation disclosure review and acknowledgement"
+    },
+    {
+      "id": "odc",
+      "name": "ODC Smart Contract",
+      "route": "/odc/smart-contract",
+      "status": "required",
+      "purpose": "OneGodian Digital Contract smart contract presentation and module routing"
+    },
+    {
+      "id": "zolfi",
+      "name": "Zolfi Capital Module",
+      "route": "/zolfi",
+      "status": "merge-required",
+      "sourceRepo": "ohi-stack/zolfi-platform",
+      "purpose": "merge Zolfi platform functions into Capital.OneGodian.com"
+    },
+    {
+      "id": "instryx",
+      "name": "Instryx Financial Interface",
+      "route": "/instryx",
+      "status": "merge-required",
+      "sourceRepo": "ohi-stack/instryx-financial-interface",
+      "purpose": "merge Instryx financial interface into Capital.OneGodian.com"
+    },
+    {
+      "id": "capital-dashboard",
+      "name": "Capital Dashboard",
+      "route": "/dashboard",
+      "status": "required",
+      "purpose": "capital readiness, modules, disclosures, and sync visibility"
+    }
+  ],
+  "appSync": {
+    "manifestEndpoint": "/api/manifest",
+    "healthEndpoint": "/api/health",
+    "requiredInApp": true
+  }
+}
