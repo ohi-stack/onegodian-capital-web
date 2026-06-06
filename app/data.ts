@@ -27,6 +27,19 @@ export type LedgerEntry = {
   status: string;
 };
 
+export type ProductLine = {
+  name: string;
+  slug: string;
+  positioning: string;
+  summary: string;
+  publicUrl: string;
+  apiLayer?: string;
+  docsLayer?: string;
+  statusLayer?: string;
+  verificationLayer: string;
+  registryLayer: string;
+};
+
 export const offerings: Offering[] = [
   {
     name: 'ONEGODIAN Founder Note™',
@@ -65,7 +78,35 @@ export const offerings: Offering[] = [
     maximum: '$10,000',
     summary:
       'Growth-oriented instrument record reserved for production-ready deployment after operational and legal review.',
-    disclosureStatus: 'Production readiness review pending',
+    disclosureStatus: 'Production readiness review required before activation',
+  },
+];
+
+export const capitalProductLines: ProductLine[] = [
+  {
+    name: 'Zolfi',
+    slug: 'zolfi',
+    positioning:
+      'ONEGODIAN Capital’s blockchain security, smart contract intelligence, and post-quantum readiness product line.',
+    summary:
+      'Zolfi organizes blockchain security review, smart contract intelligence, verification workflows, and post-quantum readiness planning under ONEGODIAN Capital.',
+    publicUrl: 'https://capital.onegodian.com/zolfi',
+    apiLayer: 'https://api.zolfi.qrv.network',
+    docsLayer: 'https://dev.zolfi.qrv.network',
+    statusLayer: 'https://status.zolfi.qrv.network',
+    verificationLayer: 'https://verify.qrv.network',
+    registryLayer: 'https://registry.qrv.network',
+  },
+  {
+    name: 'Instryx',
+    slug: 'instryx',
+    positioning:
+      'ONEGODIAN Capital’s infrastructure intelligence, investment readiness, and execution analytics product line.',
+    summary:
+      'Instryx supports capital infrastructure review, investment readiness tracking, investor intelligence, and execution analytics under ONEGODIAN Capital.',
+    publicUrl: 'https://capital.onegodian.com/instryx',
+    verificationLayer: 'https://verify.qrv.network',
+    registryLayer: 'https://registry.qrv.network',
   },
 ];
 
@@ -104,8 +145,14 @@ export const ledgerEntries: LedgerEntry[] = [
   {
     date: 'Verification Layer',
     reference: 'CAP-LEDGER-003',
-    activity: 'Certificate and disclosure pages prepared for QR-V/API bridge',
+    activity: 'Certificate and disclosure pages prepared for QRV/API bridge',
     status: 'Pending integration',
+  },
+  {
+    date: 'Product Lines',
+    reference: 'CAP-LEDGER-004',
+    activity: 'Zolfi and Instryx merged into Capital Portal as ONEGODIAN Capital product lines',
+    status: 'Active routing',
   },
 ];
 
@@ -113,6 +160,8 @@ export const readinessItems = [
   ['Hostinger Node Deployment', 'Active', 'capital.onegodian.com is operating as the Node/Next.js capital interface.'],
   ['Public Offerings UI', 'Improved', 'Offering cards, instrument metadata, disclosure notices, and status badges are rendered.'],
   ['Investor Portal UI', 'Improved', 'Dashboard cards, certificate records, ledger entries, and next-step actions are rendered.'],
-  ['Database/API Bridge', 'Pending', 'Next step: connect live API, Prisma/PostgreSQL, and webhook processing.'],
-  ['WooCommerce Bridge', 'Pending', 'Next step: checkout-only product linkage and post-disclosure certificate issuance.'],
+  ['Zolfi Product Line', 'Active Routing', 'Zolfi is presented at /zolfi as a ONEGODIAN Capital product line powered by QRV Network infrastructure.'],
+  ['Instryx Product Line', 'Active Routing', 'Instryx is presented at /instryx as a ONEGODIAN Capital product line powered by QRV Network infrastructure.'],
+  ['Database/API Bridge', 'Planned Integration', 'Live API, Prisma/PostgreSQL, and webhook processing remain part of the controlled deployment roadmap.'],
+  ['WooCommerce Bridge', 'Planned Integration', 'Checkout-only product linkage and post-disclosure certificate issuance remain part of the controlled deployment roadmap.'],
 ];
