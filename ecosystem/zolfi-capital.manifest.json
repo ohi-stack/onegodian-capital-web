@@ -1,0 +1,51 @@
+{
+  "name": "Zolfi Capital Integration",
+  "version": "0.1.0",
+  "destination": "capital.OneGodian.com",
+  "sourceRepositories": [
+    "ohi-stack/zolfi-platform",
+    "ohi-stack/instryx-financial-interface"
+  ],
+  "role": "technical execution layer for Capital.OneGodian.com",
+  "modules": {
+    "zolfiCore": true,
+    "zolfiBuildConsole": true,
+    "zolfiDocumentGenerator": true,
+    "zolfiApiGenerator": true,
+    "zolfiWorkflowBuilder": true,
+    "zolfiSecurityLab": true,
+    "zolfiSdkDocs": true,
+    "instryxFinancialInterface": true,
+    "capitalDisclosureCenter": true,
+    "capitalInvestorPortal": true,
+    "capitalContributorPortal": true
+  },
+  "routes": [
+    "/zolfi",
+    "/zolfi/dashboard",
+    "/zolfi/build-console",
+    "/zolfi/document-generator",
+    "/zolfi/workflow-builder",
+    "/zolfi/api",
+    "/zolfi/security",
+    "/zolfi/docs",
+    "/instryx",
+    "/instryx/deals",
+    "/instryx/requests",
+    "/instryx/financial-models",
+    "/instryx/audit-log"
+  ],
+  "apiRoutes": [
+    "/api/zolfi/health",
+    "/api/zolfi/manifest",
+    "/api/zolfi/modules",
+    "/api/zolfi/generate/page",
+    "/api/zolfi/generate/document",
+    "/api/zolfi/generate/workflow",
+    "/api/zolfi/validate",
+    "/api/instryx/health",
+    "/api/instryx/requests"
+  ],
+  "complianceBoundary": "Zolfi supports technical planning, documentation, workflow generation, security review, and platform development. Zolfi does not provide legal, tax, banking, securities, or investment advice. INSTRYX workflows remain approval-gated and auditable.",
+  "status": "scaffolded"
+}
