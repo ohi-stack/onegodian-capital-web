@@ -61,16 +61,19 @@ export const zolfiServices = [
   },
 ];
 
-export const zolfiRoutes = [
+export const zolfiPrimaryRoutes = [
   '/zolfi',
-  '/zolfi/blockchain-security',
-  '/zolfi/smart-contracts',
-  '/zolfi/verification',
-  '/zolfi/investor-trust-layer',
-  '/zolfi/roadmap',
-  '/api/zolfi/status',
-  '/api/zolfi/manifest',
+  '/zolfi/services',
+  '/zolfi/quantum',
+  '/zolfi/dev',
+  '/zolfi/research',
 ];
+
+export const zolfiModuleRoutes = zolfiServices.map((service) => `/zolfi/${service.slug}`);
+
+export const zolfiApiRoutes = ['/api/zolfi/status', '/api/zolfi/manifest'];
+
+export const zolfiRoutes = [...zolfiPrimaryRoutes, ...zolfiModuleRoutes, ...zolfiApiRoutes];
 
 export const zolfiDisclosure =
   'Zolfi™ materials on Capital.OneGodian.com are provided by ONEGODIAN, LLC for software, infrastructure, education, documentation, and commercial platform development. Nothing on this page is legal, investment, tax, banking, securities, or governmental advice. Any regulated activity requires appropriate professional review and separate written approval.';
@@ -83,6 +86,9 @@ export const zolfiManifest = {
   owner: 'ONEGODIAN, LLC',
   classification: 'commercial software, blockchain security, verification, and capital infrastructure support layer',
   routes: zolfiRoutes,
+  primaryRoutes: zolfiPrimaryRoutes,
+  moduleRoutes: zolfiModuleRoutes,
+  apiRoutes: zolfiApiRoutes,
   services: zolfiServices.map(({ title, slug, summary }) => ({ title, slug, summary })),
   boundaries: {
     mayExpose: [
