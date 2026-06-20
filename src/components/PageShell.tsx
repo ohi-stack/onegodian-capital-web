@@ -1,14 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navItems = [
-  ['Home', '/'],
   ['Offerings', '/offerings'],
   ['Investor Portal', '/investor-portal'],
   ['Disclosures', '/disclosures'],
   ['Certificates', '/certificates'],
-  ['Compliance', '/compliance-status'],
-  ['Support', '/support'],
+  ['Readiness', '/readiness'],
+  ['Records', '/records'],
+  ['Status', '/status'],
 ];
 
 const footerGroups = [
@@ -18,29 +21,32 @@ const footerGroups = [
       ['Home', '/'],
       ['Offerings', '/offerings'],
       ['Investor Portal', '/investor-portal'],
-      ['Certificates', '/certificates'],
+      ['Records', '/records'],
     ],
   },
   {
-    title: 'Disclosures',
+    title: 'Control',
     links: [
-      ['Disclosure Center', '/disclosures'],
-      ['Risk Disclosures', '/risk-disclosures'],
-      ['Legal Notices', '/legal-notices'],
-      ['Compliance Status', '/compliance-status'],
+      ['Disclosures', '/disclosures'],
+      ['Certificates', '/certificates'],
+      ['Readiness', '/readiness'],
+      ['Status', '/status'],
     ],
   },
   {
     title: 'Policies',
     links: [
+      ['Risk Disclosures', '/risk-disclosures'],
+      ['Legal Notices', '/legal-notices'],
       ['Refund & Cancellation', '/refund-cancellation-policy'],
       ['Data Retention', '/data-retention-policy'],
-      ['Support', '/support'],
     ],
   },
 ];
 
 export default function PageShell({ children }: Readonly<{ children: React.ReactNode }>) {
+  const pathname = usePathname();
+
   return (
     <div className="site-shell">
       <header className="site-header">
@@ -48,16 +54,21 @@ export default function PageShell({ children }: Readonly<{ children: React.React
           <Link className="brand brand-logo" href="/" aria-label="ONEGODIAN Capital home">
             <Image
               src="/onegodian-capital-logo.svg"
-              alt="ONEGODIAN — In God We Build"
+              alt="ONEGODIAN Capital Portal"
               width={560}
               height={160}
               priority
             />
           </Link>
-          <nav className="nav-links" aria-label="Primary navigation">
-            {navItems.map(([label, href]) => (
-              <Link key={href} href={href}>{label}</Link>
-            ))}
+          <nav className="nav-links" aria-label="Capital Portal navigation">
+            {navItems.map(([label, href]) => {
+              const active = pathname === href || (href !== '/' && pathname?.startsWith(href));
+              return (
+                <Link key={href} href={href} className={active ? 'active' : undefined}>
+                  {label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </header>
@@ -67,12 +78,12 @@ export default function PageShell({ children }: Readonly<{ children: React.React
           <div className="footer-brand">
             <Image
               src="/onegodian-capital-logo.svg"
-              alt="ONEGODIAN — In God We Build"
+              alt="ONEGODIAN Capital Portal"
               width={360}
               height={103}
             />
             <p>
-              ONEGODIAN Capital Portal is software infrastructure for recordkeeping, disclosure review, and certificate verification. Legal review is required before live capital workflows.
+              ONEGODIAN Capital Portal is controlled software infrastructure for recordkeeping, disclosure review, readiness tracking, and certificate verification. It does not independently create, approve, or validate any securities offering.
             </p>
           </div>
           {footerGroups.map((group) => (
