@@ -1,47 +1,100 @@
 import Link from 'next/link';
 import PageShell from '@/components/PageShell';
 
-const portalCards = [
-  ['Offerings', '/offerings', 'Review disclosure-backed offering records and test-mode capital instrument information.'],
-  ['Investor Portal', '/investor-portal', 'View account-linked instruments, certificates, disclosure acceptances, and ledger records.'],
-  ['Disclosures', '/disclosures', 'Review the disclosure-first workflow required before any instrument issuance.'],
-  ['Certificates', '/certificates', 'Verify certificate records, identifiers, status, and hash references.'],
-  ['Compliance Status', '/compliance-status', 'Track legal, payment, data, permission, and tax/accounting readiness items.'],
-  ['Support', '/support', 'Request help for dashboard access, record corrections, and certificate verification.'],
+const featuredOfferings = [
+  {
+    title: 'ONEGODIAN Infrastructure Bond',
+    code: 'OPIB-2025',
+    terms: '7.50% · 5 Years',
+    href: '/offerings',
+  },
+  {
+    title: 'ONEGODIAN Platform Growth Note',
+    code: 'OPGN-2025',
+    terms: '8.00% · 7 Years',
+    href: '/offerings',
+  },
+];
+
+const boundaryCards = [
+  {
+    title: 'WordPress Public Layer',
+    description: 'Public pages, educational copy, disclosure access, navigation, and campaign presentation.',
+  },
+  {
+    title: 'WooCommerce Checkout Layer',
+    description: 'Checkout-only commerce handling for approved products or document access where applicable.',
+  },
+  {
+    title: 'Capital Portal Record Layer',
+    description: 'Ledgers, certificates, readiness, disclosure gates, and investor-facing recordkeeping.',
+  },
+  {
+    title: 'API / Verification Layer',
+    description: 'Status checks, document verification, certificate lookup, and future integration endpoints.',
+  },
 ];
 
 export default function Home() {
   return (
     <PageShell>
-      <section className="hero">
+      <section className="hero capital-hero">
         <div className="page-section">
-          <div className="eyebrow">Capital recordkeeping infrastructure</div>
-          <h1>ONEGODIAN Capital Portal</h1>
+          <div className="portal-title">ONEGODIAN CAPITAL PORTAL™</div>
+          <div className="eyebrow">Private Capital Infrastructure</div>
+          <h1>Notes, bonds, ledgers, disclosures, and verifiable certificates.</h1>
           <p>
-            Dedicated software infrastructure for offering records, disclosure review, investor dashboards, ledger history, and certificate verification connected to ONEGODIAN, LLC.
+            The ONEGODIAN Capital Portal is a controlled recordkeeping and investor-facing interface for capital instrument documentation. It does not independently create, approve, or validate any securities offering.
           </p>
           <div className="cta-row">
             <Link className="button" href="/offerings">View Offerings</Link>
-            <Link className="button secondary" href="/investor-portal">Open Investor Portal</Link>
+            <Link className="button secondary" href="/readiness">Review Readiness</Link>
           </div>
         </div>
       </section>
 
       <section className="page-section">
-        <div className="notice">
-          <strong>Important notice:</strong> This platform does not itself create, approve, or validate any securities offering. All offering terms, disclosure packets, eligibility rules, payment workflows, and tax/accounting treatment require qualified review before live public use.
+        <div className="section-heading-row">
+          <div>
+            <div className="eyebrow dark">Offering Records</div>
+            <h2>Current record examples</h2>
+          </div>
+          <Link className="button compact" href="/offerings">Open Offerings</Link>
+        </div>
+        <div className="grid two">
+          {featuredOfferings.map((offering) => (
+            <article className="card offering-card" key={offering.code}>
+              <span className="status-badge">Record Review</span>
+              <h3>{offering.title}</h3>
+              <p>{offering.code}</p>
+              <p><strong>{offering.terms}</strong></p>
+              <Link className="button" href={offering.href}>Review Details</Link>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="page-section">
-        <h2>Portal Sections</h2>
-        <div className="grid">
-          {portalCards.map(([title, href, description]) => (
-            <Link className="card" href={href} key={href}>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </Link>
+      <section className="page-section boundary-section">
+        <div className="section-heading-row">
+          <div>
+            <div className="eyebrow dark">System Separation</div>
+            <h2>Operating Boundary</h2>
+          </div>
+        </div>
+        <p className="section-lead">
+          WordPress presents public information, WooCommerce is checkout-only, the Capital Portal manages records, disclosures gate issuance, and certificates provide verification.
+        </p>
+        <div className="boundary-grid">
+          {boundaryCards.map((card, index) => (
+            <article className="boundary-card" key={card.title}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </article>
           ))}
+        </div>
+        <div className="boundary-note">
+          Operating boundary: public presentation, commerce checkout, capital records, and verification should remain separated so users understand what each system does and does not do.
         </div>
       </section>
     </PageShell>
