@@ -1,81 +1,129 @@
+import Link from 'next/link';
 import { certificates, ledgerEntries, offerings } from '../data';
+import { BookOpen, Search, ShieldCheck, FileCheck, Layers, ExternalLink } from 'lucide-react';
 
-export default function Registry() {
+export default function RegistryPage() {
   return (
-    <main className="section">
-      <div className="wrap">
-        <div style={{ marginBottom: 34 }}>
-          <div className="eyebrow">Capital Records Layer</div>
-          <h1>Capital Registry</h1>
-          <p className="lead">
-            The Capital Registry organizes offering references, certificate records,
-            ledger entries, disclosure status, and verification-ready administrative records.
-          </p>
+    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
+      {/* Header */}
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold">
+          <BookOpen className="w-3.5 h-3.5" />
+          <span>ODIN Registry™ Layer</span>
+          <span>•</span>
+          <span>Canonical Identifiers</span>
         </div>
+        <h1 className="text-3xl sm:text-4xl font-black text-white">
+          ODIN Registry™ Records & Canonical Identifiers
+        </h1>
+        <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+          The ODIN Registry™ is the canonical record and identifier layer of the OneGodian Digital Finance™ ecosystem.
+          It indexes token contracts, capital instruments, participant verification seals, and audit trails.
+        </p>
+      </div>
 
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Administrative Registry Notice</strong>
-          <p>
-            Registry records are internal administrative references only. They do not approve participation,
-            validate securities, prove ownership, guarantee repayment, or finalize any capital record.
-            Formal rights, obligations, and participation terms must be established through reviewed documents
-            and applicable compliance procedures.
-          </p>
+      {/* Offerings in ODIN Registry */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+          <Layers className="w-5 h-5 text-amber-400" />
+          Registered Capital Instruments
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {offerings.map((offering) => (
+            <div
+              key={offering.code}
+              className="p-6 rounded-2xl bg-[#0b1021] border border-[#212d4d] space-y-3 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-mono text-xs font-bold text-amber-400">
+                    ODIN-{offering.code}
+                  </span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+                    {offering.status}
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-white">{offering.name}</h3>
+                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                  {offering.summary}
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+                <span>Type: {offering.instrumentType}</span>
+                <Link href="/offerings" className="text-amber-400 hover:underline">
+                  View Offering →
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <section style={{ marginBottom: 44 }}>
-          <h2>Offering Registry</h2>
-          <p className="lead">Current offering references maintained by the Capital Portal.</p>
-          <div className="cards">
-            {offerings.map((offering) => (
-              <div className="card" key={offering.code}>
-                <span className="badge">{offering.status}</span>
-                <h2 style={{ marginTop: 18 }}>{offering.name}</h2>
-                <p><strong>Registry Code:</strong> {offering.code}</p>
-                <p><strong>Instrument Type:</strong> {offering.instrumentType}</p>
-                <p>{offering.summary}</p>
+      {/* Certificate Registry Section */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+          <FileCheck className="w-5 h-5 text-purple-400" />
+          Registered Certificate Entries
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {certificates.map((cert) => (
+            <div
+              key={cert.id}
+              className="p-6 rounded-2xl bg-[#0b1021] border border-[#212d4d] space-y-3"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-bold text-purple-300">
+                  ODIN-REG-{cert.id}
+                </span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700/40">
+                  {cert.status}
+                </span>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ marginBottom: 44 }}>
-          <h2>Certificate Registry</h2>
-          <p className="lead">Certificate records prepared for verification bridge integration.</p>
-          <div className="cards">
-            {certificates.map((certificate) => (
-              <div className="card" key={certificate.id}>
-                <span className="badge">{certificate.status}</span>
-                <h3>{certificate.id}</h3>
-                <p><strong>Instrument:</strong> {certificate.instrument}</p>
-                <p><strong>Holder:</strong> {certificate.holder}</p>
-                <p><strong>Issued:</strong> {certificate.issued}</p>
-                <a className="btn btnGold" href={`/certificates/${certificate.id}`}>
-                  Open Certificate Record
-                </a>
+              <h4 className="text-base font-bold text-white">{cert.instrument}</h4>
+              <div className="text-xs text-slate-400 space-y-1">
+                <div><strong>Holder:</strong> {cert.holder}</div>
+                <div><strong>Issued Date:</strong> {cert.issued}</div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ marginBottom: 44 }}>
-          <h2>Ledger Registry</h2>
-          <p className="lead">Capital infrastructure activity references currently tracked in the portal.</p>
-          <div className="cards">
-            {ledgerEntries.map((entry) => (
-              <div className="card" key={entry.reference}>
-                <span className="badge">{entry.status}</span>
-                <h3>{entry.reference}</h3>
-                <p>{entry.activity}</p>
-                <p><strong>Date / Stage:</strong> {entry.date}</p>
+              <div className="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+                <span className="text-slate-500">OBP-1 Provenance</span>
+                <div className="flex items-center gap-3">
+                  <Link href={`/certificates/${cert.id}`} className="text-purple-400 hover:text-purple-300">
+                    QR-V™ Seal →
+                  </Link>
+                  <Link href="/certificates" className="text-amber-400 hover:underline">
+                    Verify Record
+                  </Link>
+                </div>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        <div className="placeholder" style={{ marginTop: 44 }}>
-          Registry API placeholder: pending QRV records, OBP-1™ references, disclosure acknowledgement logs,
-          participant-safe lookup, and immutable audit event display.
+      {/* Ledger Registry Activity */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+          <ShieldCheck className="w-5 h-5 text-emerald-400" />
+          Audited Ledger Records
+        </h2>
+        <div className="space-y-2">
+          {ledgerEntries.map((entry) => (
+            <div
+              key={entry.reference}
+              className="p-4 rounded-xl bg-[#090d1c] border border-slate-800 flex items-center justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-xs font-bold text-amber-400">{entry.reference}</span>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+                    {entry.status}
+                  </span>
+                </div>
+                <div className="text-sm font-semibold text-white mt-1">{entry.activity}</div>
+              </div>
+              <span className="text-xs text-slate-500 font-mono">{entry.date}</span>
+            </div>
+          ))}
         </div>
       </div>
     </main>

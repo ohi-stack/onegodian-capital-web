@@ -1,85 +1,96 @@
+import Link from 'next/link';
 import { zolfiDisclosure, zolfiRoutes, zolfiServices } from './data';
+import { ShieldCheck, Lock, Code2, ArrowRight, ExternalLink, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Zolfi™ Blockchain Security | ONEGODIAN Capital',
+  title: 'Zolfi™ Blockchain Security & Smart Contract Architecture | ODeFi™',
   description:
-    'Zolfi™ is the blockchain security, smart contract readiness, QRV verification, and investor trust infrastructure layer inside ONEGODIAN Capital.',
+    'Zolfi™ is the blockchain security, smart contract readiness, QRV verification, and investor trust infrastructure layer inside ODeFi and ONEGODIAN Capital.',
 };
 
 export default function ZolfiPage() {
   return (
-    <main>
-      <section className="hero">
-        <div className="wrap">
-          <div className="heroGrid">
-            <div>
-              <div className="eyebrow">Zolfi™ · Blockchain Security · Verification</div>
-              <h1>Capital-grade blockchain security and investor trust infrastructure.</h1>
-              <p>
-                Zolfi™ is ONEGODIAN Capital’s blockchain security, smart contract readiness, QRV verification, and financial-interface support layer. It helps organize secure records, disclosure-aware workflows, and verification pathways for capital-platform operations.
-              </p>
-              <div className="actions">
-                <a className="btn btnGold" href="/zolfi/blockchain-security">Review Security Layer</a>
-                <a className="btn btnGhost" href="/zolfi/smart-contracts">Smart Contract Readiness</a>
-                <a className="btn btnGhost" href="/api/zolfi/manifest">View Manifest</a>
+    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
+      {/* Hero Header */}
+      <div className="space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold">
+          <ShieldCheck className="w-3.5 h-3.5" />
+          <span>Zolfi™ Protocol Security Infrastructure</span>
+          <span>•</span>
+          <span>QR-V™ / OBP-1™ Enabled</span>
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-black text-white">
+          Capital-Grade Blockchain Security & Trust Layer
+        </h1>
+        <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+          Zolfi™ organizes blockchain security review, smart contract intelligence, cryptographic audit trails,
+          and post-quantum preparation for the OneGodian Digital Finance™ ecosystem.
+        </p>
+
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <Link
+            href="/zolfi/blockchain-security"
+            className="btn-gold px-5 py-2.5 text-xs uppercase tracking-wider font-bold"
+          >
+            Review Security Layer
+          </Link>
+          <Link
+            href="/zolfi/smart-contracts"
+            className="btn-secondary px-5 py-2.5 text-xs uppercase tracking-wider font-semibold"
+          >
+            Smart Contract Readiness
+          </Link>
+          <Link
+            href="/api/zolfi/manifest"
+            target="_blank"
+            className="px-4 py-2.5 text-xs text-amber-300 hover:text-white flex items-center gap-1 font-mono"
+          >
+            API Manifest
+            <ExternalLink className="w-3 h-3" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Services Grid */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold text-white">Zolfi™ Product and Service Modules</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {zolfiServices.map((service) => (
+            <div
+              key={service.slug}
+              className="p-6 rounded-2xl bg-[#0b1021] border border-[#212d4d] space-y-3 flex flex-col justify-between hover:border-purple-500/40 transition-colors"
+            >
+              <div>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/40 font-mono">
+                  Module
+                </span>
+                <h3 className="text-base font-bold text-white mt-2">{service.title}</h3>
+                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                  {service.summary}
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-800">
+                <Link
+                  href={`/zolfi/${service.slug}`}
+                  className="text-xs text-amber-400 hover:underline flex items-center gap-1 font-semibold"
+                >
+                  Open Module Details
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
-            <div className="panel">
-              <div className="screen">
-                <h2>Zolfi™ Status</h2>
-                <div className="statGrid">
-                  <div className="stat"><b>5</b>Service Modules</div>
-                  <div className="stat"><b>QRV</b>Verification Bridge</div>
-                  <div className="stat"><b>API</b>Status + Manifest</div>
-                  <div className="stat"><b>Live</b>Capital Integration</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
 
-      <section className="section">
-        <div className="wrap">
-          <h2>Zolfi™ Product and Service Modules</h2>
-          <p className="lead">
-            These modules convert the original Zolfi™ concept into a public, compliance-aware Capital.OneGodian.com product line.
-          </p>
-          <div className="cards">
-            {zolfiServices.map((service) => (
-              <div className="card" key={service.slug}>
-                <span className="badge">Zolfi™ Module</span>
-                <h3>{service.title}</h3>
-                <p>{service.summary}</p>
-                <a className="btn btnGold" href={`/zolfi/${service.slug}`}>Open Module</a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section sectionAlt">
-        <div className="wrap">
-          <h2>Implementation Routes</h2>
-          <p className="lead">The Zolfi™ route set is now defined for public pages and API status/manifest endpoints.</p>
-          <div className="cards">
-            {zolfiRoutes.map((route) => (
-              <div className="card" key={route}>
-                <span className="badge">Route</span>
-                <h3>{route}</h3>
-                <p>Configured as part of the Capital.OneGodian.com Zolfi™ implementation.</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="wrap">
-          <h2>Disclosure Boundary</h2>
-          <p className="lead">{zolfiDisclosure}</p>
-        </div>
-      </section>
+      {/* Disclosure Boundary */}
+      <div className="p-6 rounded-2xl bg-[#070b16] border border-slate-800 text-xs text-slate-400 space-y-2">
+        <h4 className="font-bold text-slate-200 uppercase tracking-wider text-xs flex items-center gap-1.5">
+          <Lock className="w-3.5 h-3.5 text-amber-400" />
+          Disclosure Boundary
+        </h4>
+        <p className="leading-relaxed">{zolfiDisclosure}</p>
+      </div>
     </main>
   );
 }

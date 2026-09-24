@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/offerings', label: 'Offerings' },
@@ -12,14 +14,14 @@ export default function CapitalNavigation() {
   return (
     <header className="capitalNav" aria-label="ONEGODIAN Capital Portal navigation">
       <div className="wrap capitalNavInner">
-        <a className="capitalBrand" href="/" aria-label="ONEGODIAN Capital Portal home">
+        <Link className="capitalBrand" href="/" aria-label="ONEGODIAN Capital Portal home">
           ONEGODIAN CAPITAL PORTAL™
-        </a>
+        </Link>
         <nav className="capitalLinks" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

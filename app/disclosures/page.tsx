@@ -1,164 +1,202 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useAuth } from '../lib/AuthContext';
+import { Scale, CheckCircle2, AlertTriangle, ShieldCheck, Lock, ArrowRight, FileText } from 'lucide-react';
+
 const disclosureItems = [
   {
-    title: 'General Capital Participation Disclosure',
+    title: 'General Digital Finance & Capital Disclosure',
     status: 'Required',
-    body: 'Applies to all contributions, capital-support actions, project funding, sponsorships, paid access, and participation pathways connected to ONEGODIAN, LLC.',
+    body: 'Applies to all contributions, transactions, capital-support actions, project funding, paid access, and participation pathways connected to ONEGODIAN, LLC and ODeFi™.',
   },
   {
-    title: 'Offering and Instrument Disclosure',
-    status: 'Instrument Level',
-    body: 'Applies to any OneGodian-branded note, bond, certificate, digital participation instrument, funding round, capital raise, or similar structure.',
-  },
-  {
-    title: 'Digital Asset and Token Disclosure',
+    title: 'ODC™ Digital Asset & Token Disclosure',
     status: 'Digital Asset Review',
-    body: 'Applies to ODT, OBT, ODC, OBC, ODIN Credits™, OBP-1™-verified assets, blockchain-linked records, digital certificates, token concepts, or any related digital participation system.',
+    body: 'Applies to ODC (Ethereum Mainnet ERC-20: 0x9eee...ce98), OBP-1™-verified assets, blockchain-linked records, digital certificates, and non-custodial wallet interactions.',
   },
   {
-    title: 'Platform and Technology Disclosure',
+    title: 'Non-Custodial Architecture & OBW-1™ Independence',
+    status: 'Key Independence',
+    body: 'Confirms that ODeFi™ and OBW-1™ never request, store, or possess user private keys. Assets remain solely under participant control. Lost keys cannot be recovered by ONEGODIAN, LLC.',
+  },
+  {
+    title: 'Platform, Infrastructure & Network Risks',
     status: 'Platform Review',
-    body: 'Applies to capital participation connected to app.OneGodian.com, capital.OneGodian.com, OMOS.OneGodian.com, QuantumOHI.com, OneGodian.com, OneGodian.org, or related software, plugin, bridge, registry, dashboard, or API systems.',
+    body: 'Applies to decentralized protocol interactions across odefi.onegodian.com, API bridges, smart contracts, third-party node providers, and gas fee fluctuations.',
   },
   {
-    title: 'Business and Execution Risk Disclosure',
-    status: 'Risk Review',
-    body: 'Applies to all participants reviewing ONEGODIAN, LLC business plans, revenue systems, capital strategy, product roadmap, deployment schedule, or operational milestones.',
+    title: 'Institutional Note & Bond Offering Disclosures',
+    status: 'Instrument Level',
+    body: 'Applies to ONEGODIAN Founder Note™ (OGFN-2025), Infrastructure Bond™ (OGIB-2025), and Platform Growth Note™ (OPGN-2025). Restricted to accredited/qualified participants.',
   },
   {
-    title: 'Contributor and Supporter Disclosure',
-    status: 'Supporter Review',
-    body: 'Applies to voluntary contributors, supporters, campaign participants, subscribers, product purchasers, sponsors, and non-investment supporters of ONEGODIAN, LLC.',
+    title: 'Corporate Identity & Non-Governmental Entity Notice',
+    status: 'Legal Status',
+    body: 'Confirms that ONEGODIAN, LLC is a private commercial technology, publishing, and infrastructure enterprise. It is not a government agency, sovereign state, or central bank.',
   },
 ];
 
 const acknowledgements = [
-  'They are responsible for reading all applicable disclosures before participating.',
-  'They understand that capital participation may involve financial, operational, market, technology, regulatory, and execution risks.',
-  'They understand that no profit, return, appreciation, redemption, distribution, repayment, benefit, listing, token value, market price, or business outcome is guaranteed.',
-  'They understand that ONEGODIAN, LLC is a private Connecticut limited liability company and not a bank, broker-dealer, investment adviser, exchange, securities marketplace, government agency, or public authority.',
-  'They understand that all capital-related materials are subject to revision, correction, legal review, and compliance updates.',
-  'They understand that participation may be denied, paused, refunded, canceled, limited, or modified if required for compliance, operational readiness, eligibility review, or risk management.',
-  'They understand that any projected values, timelines, platform features, technology integrations, token concepts, revenue models, or development milestones are forward-looking and may change.',
+  'I am responsible for reviewing all applicable disclosures before participating or connecting my wallet.',
+  'I understand that digital finance and capital instruments involve financial, operational, smart contract, and market risks.',
+  'I understand that no returns, appreciation, liquidity, or recovery of assets is guaranteed by ONEGODIAN, LLC or any affiliate.',
+  'I understand that ONEGODIAN, LLC is a private commercial entity and not a bank, broker-dealer, or governmental agency.',
+  'I understand that all capital-related materials are subject to revision, audit updates, and compliance gates.',
+  'I acknowledge that my wallet (OBW-1™) is non-custodial and I bear full responsibility for private key safeguarding.',
+  'I understand that transactions executed on the blockchain are irreversible once mined by the network.',
 ];
 
-export default function Disclosures() {
+export default function DisclosuresPage() {
+  const { user, profile, acceptDisclosures, signInWithGoogle } = useAuth();
+  const [agreed, setAgreed] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleAcceptance = async () => {
+    if (!agreed) return;
+    try {
+      setSubmitting(true);
+      await acceptDisclosures();
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
-    <main className="section">
-      <div className="wrap">
-        <div style={{ marginBottom: 34 }}>
-          <div className="eyebrow">Disclosure Center</div>
-          <h1>Disclosure Center</h1>
-          <p className="lead">
-            All capital participation requires disclosure review and acknowledgement.
-          </p>
+    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10">
+      {/* Header */}
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold">
+          <Scale className="w-3.5 h-3.5" />
+          <span>Compliance & Legal Safeguards</span>
+          <span>•</span>
+          <span>ODeFi.OneGodian.com</span>
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-black text-white">
+          Mandatory Disclosure Center
+        </h1>
+        <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+          The Disclosure Center is the authoritative review gate for all participants. Review and electronic
+          acknowledgement must occur prior to any capital participation or gated protocol feature activation.
+        </p>
+      </div>
+
+      {/* Critical Non-Custodial & Legal Notice */}
+      <div className="p-6 rounded-2xl bg-[#0e1428] border border-amber-500/40 space-y-3">
+        <div className="flex items-center gap-2 text-amber-300 font-bold uppercase tracking-wider text-xs font-mono">
+          <AlertTriangle className="w-4 h-4" />
+          Governing Disclosure Notice
+        </div>
+        <p className="text-xs text-slate-300 leading-relaxed">
+          Capital participation and digital finance interaction with ONEGODIAN, LLC are subject to strict compliance gates.
+          Nothing on this platform constitutes legal, tax, securities, or financial advice. Participants must consult their own
+          qualified advisers. ONEGODIAN, LLC operates private software infrastructure and does not act as an investment broker.
+        </p>
+      </div>
+
+      {/* Interactive Acknowledgement Box */}
+      <div className="p-6 rounded-2xl bg-[#0b1021] border border-[#223055] space-y-5">
+        <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2">
+            <Lock className="w-4 h-4 text-amber-400" />
+            Electronic Disclosure Sign-off Gate
+          </h3>
+          <span className="text-xs font-mono text-slate-400">
+            {profile?.disclosureAcceptedAt ? (
+              <span className="text-emerald-400 font-bold flex items-center gap-1">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                Signed {new Date(profile.disclosureAcceptedAt).toLocaleDateString()}
+              </span>
+            ) : (
+              <span className="text-amber-400 font-bold">Action Required</span>
+            )}
+          </span>
         </div>
 
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Disclosure Review Required</strong>
-          <p>
-            The Disclosure Center is the official review area for individuals, contributors, members, partners, and potential capital participants who are evaluating any ONEGODIAN, LLC capital-related opportunity, contribution pathway, instrument, offering, project, or participation program.
-          </p>
-          <p>
-            Before taking any action, each participant must review the applicable disclosures, understand the nature of the opportunity, and acknowledge that participation is voluntary, risk-bearing, and subject to the terms, conditions, eligibility requirements, and documentation provided by ONEGODIAN, LLC.
-          </p>
+        <div className="space-y-2">
+          {acknowledgements.map((item, index) => (
+            <div
+              key={index}
+              className="p-3 rounded-lg bg-[#070b16] border border-slate-800 flex items-start gap-3 text-xs text-slate-300"
+            >
+              <span className="font-mono text-amber-400 font-bold shrink-0">{index + 1}.</span>
+              <span>{item}</span>
+            </div>
+          ))}
         </div>
 
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Important Notice</strong>
-          <p>
-            Capital participation with ONEGODIAN, LLC is not automatic, guaranteed, or unconditional. Any contribution, purchase, funding participation, sponsorship, note, bond, token-related participation, digital instrument, membership-linked benefit, or project-support arrangement must be reviewed through the proper disclosure process before acceptance.
-          </p>
-          <p>
-            Nothing on this page should be understood as legal, tax, accounting, investment, banking, securities, or financial advice. Participants are encouraged to consult their own qualified legal, tax, accounting, or financial professionals before participating.
-          </p>
-        </div>
+        {user ? (
+          <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={agreed || !!profile?.disclosureAcceptedAt}
+                disabled={!!profile?.disclosureAcceptedAt}
+                onChange={(e) => setAgreed(e.target.checked)}
+                className="w-4 h-4 rounded bg-slate-900 border-slate-700 text-amber-500 focus:ring-0"
+              />
+              <span>
+                I confirm that I have read, understood, and accept all listed disclosures on behalf of{' '}
+                <strong className="text-white font-mono">{user.email}</strong>.
+              </span>
+            </label>
 
-        <section style={{ marginBottom: 44 }}>
-          <h2>What Participants Must Acknowledge</h2>
-          <p className="lead">By reviewing the Disclosure Center, each participant acknowledges that:</p>
-          <div className="cards">
-            {acknowledgements.map((item, index) => (
-              <div className="card" key={item}>
-                <span className="badge">Acknowledgement {index + 1}</span>
-                <p>{item}</p>
+            {!profile?.disclosureAcceptedAt ? (
+              <button
+                onClick={handleAcceptance}
+                disabled={!agreed || submitting}
+                className="btn-gold px-6 py-2.5 text-xs uppercase tracking-wider font-extrabold disabled:opacity-50"
+              >
+                {submitting ? 'Recording...' : 'Accept & Record Gate'}
+              </button>
+            ) : (
+              <div className="text-xs text-emerald-400 font-bold flex items-center gap-1">
+                <CheckCircle2 className="w-4 h-4" />
+                Gate Validated in Firestore
               </div>
-            ))}
+            )}
           </div>
-        </section>
+        ) : (
+          <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span className="text-xs text-slate-400">
+              Please authenticate to electronically record your disclosure acceptance.
+            </span>
+            <button
+              onClick={() => signInWithGoogle()}
+              className="btn-gold px-5 py-2 text-xs uppercase tracking-wider font-bold"
+            >
+              Sign In to Accept
+            </button>
+          </div>
+        )}
+      </div>
 
-        <section style={{ marginBottom: 44 }}>
-          <h2>Disclosure Categories</h2>
-          <p className="lead">Participants should review the applicable disclosure category before proceeding.</p>
-          <div className="cards">
-            {disclosureItems.map((item) => (
-              <div className="card" key={item.title}>
-                <span className="badge">{item.status}</span>
-                <h2 style={{ marginTop: 18 }}>{item.title}</h2>
-                <p>{item.body}</p>
+      {/* Disclosure Categories Grid */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-bold text-white">Specific Disclosure Categories</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {disclosureItems.map((item) => (
+            <div
+              key={item.title}
+              className="p-6 rounded-2xl bg-[#0b1021] border border-[#212d4d] space-y-3 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono">
+                    {item.status}
+                  </span>
+                </div>
+                <h4 className="text-base font-bold text-white">{item.title}</h4>
+                <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                  {item.body}
+                </p>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Required Acknowledgement</strong>
-          <p>
-            Before submitting any capital participation form, contribution, purchase, funding request, onboarding form, investor inquiry, partnership request, or related transaction, the participant must acknowledge the following:
-          </p>
-          <blockquote>
-            I have reviewed the applicable ONEGODIAN, LLC disclosures. I understand that participation is voluntary and may involve risk. I understand that no return, profit, repayment, token value, appreciation, platform outcome, business result, or future benefit is guaranteed. I understand that I should consult my own legal, tax, accounting, or financial adviser before participating.
-          </blockquote>
-        </div>
-
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>No Public Offering Unless Stated in Formal Documents</strong>
-          <p>
-            Unless expressly stated in a formal, legally reviewed offering document, nothing published on capital.OneGodian.com constitutes a public securities offering, solicitation to invest, brokered transaction, crowdfunding offering, banking product, deposit account, insured financial product, or guaranteed investment opportunity.
-          </p>
-          <p>
-            All materials are provided for informational, educational, business development, platform documentation, and participant review purposes only.
-          </p>
-        </div>
-
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Forward-Looking Statement Notice</strong>
-          <p>
-            Some materials on capital.OneGodian.com may describe future plans, projected systems, roadmap items, platform development, estimated valuations, expected features, potential revenue streams, funding goals, or business objectives. These statements are forward-looking and are not guarantees.
-          </p>
-          <p>
-            Actual results may differ materially due to market conditions, funding availability, legal review, technology development, operational execution, regulatory requirements, third-party integrations, banking access, hosting infrastructure, customer adoption, and other factors.
-          </p>
-        </div>
-
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Participant Responsibility</strong>
-          <p>
-            Each participant is responsible for performing their own review before participating. This includes reviewing the applicable disclosures, understanding the risks, asking questions, keeping copies of relevant documents, and seeking independent professional advice where appropriate.
-          </p>
-          <p>
-            Participation should only occur after the participant fully understands the nature of the transaction or support pathway.
-          </p>
-        </div>
-
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Compliance Review Status</strong>
-          <p>
-            ONEGODIAN, LLC may update, revise, expand, or replace disclosure materials as its platforms, products, funding structures, digital systems, and business operations develop.
-          </p>
-          <p>
-            The Disclosure Center should be treated as a living compliance and participant-review area. The most current version posted on capital.OneGodian.com controls unless a separately executed written agreement states otherwise.
-          </p>
-        </div>
-
-        <div className="notice" style={{ marginBottom: 34 }}>
-          <strong>Contact for Disclosure Questions</strong>
-          <p>
-            For questions about disclosures, capital participation review, contributor acknowledgement, or platform documentation, participants should contact ONEGODIAN, LLC through the official contact method listed on capital.OneGodian.com.
-          </p>
-        </div>
-
-        <div className="placeholder" style={{ marginTop: 44 }}>
-          Disclosure acknowledgement workflow placeholder: pending database, authentication, document versioning, electronic acknowledgement, timestamping, IP/reference metadata, and audit-log integration.
+              <div className="pt-3 border-t border-slate-800 text-[11px] text-slate-500">
+                Audited & Maintained by ONEGODIAN Legal Infrastructure
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </main>

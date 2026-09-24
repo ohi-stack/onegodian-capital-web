@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with ODFID verification state, roles, and settings.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "odfid": { "type": "string", "maxLength": 64 },
+        "role": { "type": "string", "enum": ["user", "investor", "merchant", "admin"] },
+        "verificationTier": { "type": "string", "enum": ["unverified", "tier-1", "tier-2", "institutional"] },
+        "walletAddress": { "type": "string", "maxLength": 64 },
+        "disclosureAcceptedAt": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "CertificateRecord": {
+      "title": "CertificateRecord",
+      "description": "Verifiable ONEGODIAN Capital and ODeFi certificate record.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "certificateNumber": { "type": "string" },
+        "instrument": { "type": "string" },
+        "holder": { "type": "string" },
+        "issued": { "type": "string" },
+        "status": { "type": "string", "enum": ["Verified", "Pending", "Revoked"] },
+        "provenanceHash": { "type": "string" },
+        "obp1Verification": { "type": "string" },
+        "odinReference": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "instrument", "holder", "status"]
+    },
+    "DisclosureAck": {
+      "title": "DisclosureAck",
+      "description": "Electronic acknowledgement of capital or DeFi disclosures.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "disclosureCategory": { "type": "string" },
+        "version": { "type": "string" },
+        "acknowledgedAt": { "type": "string" },
+        "termsVersion": { "type": "string" }
+      },
+      "required": ["id", "userId", "disclosureCategory", "acknowledgedAt"]
+    },
+    "LedgerEntry": {
+      "title": "LedgerEntry",
+      "description": "ODIN/ODeFi ledger activity record.",
+      "type": "object",
+      "properties": {
+        "reference": { "type": "string" },
+        "activity": { "type": "string" },
+        "date": { "type": "string" },
+        "status": { "type": "string" },
+        "category": { "type": "string" },
+        "asset": { "type": "string" }
+      },
+      "required": ["reference", "activity", "date", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile and financial identity settings."
+    },
+    "/certificates/{certId}": {
+      "schema": "CertificateRecord",
+      "description": "Public verifiable certificates."
+    },
+    "/disclosures/{ackId}": {
+      "schema": "DisclosureAck",
+      "description": "Signed disclosure acknowledgements."
+    },
+    "/ledger/{entryId}": {
+      "schema": "LedgerEntry",
+      "description": "Authoritative ledger transactions and records."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://capital.onegodian.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://odefi.onegodian.com';
 
 const staticRoutes = [
   '/',
@@ -16,6 +16,7 @@ const staticRoutes = [
   '/zolfi/verification',
   '/zolfi/investor-trust-layer',
   '/zolfi/roadmap',
+  '/zolfi/services',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -25,6 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}${route}`,
     lastModified: now,
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
-    priority: route === '/' ? 1 : route.startsWith('/zolfi') ? 0.8 : 0.7,
+    priority: route === '/' ? 1 : route.startsWith('/investor-portal') ? 0.9 : 0.7,
   }));
 }
