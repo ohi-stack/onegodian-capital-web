@@ -2,6 +2,26 @@
 
 Dedicated Next.js frontend for **capital.onegodian.com**, covering capital participation, disclosures, institutional records, certificates, compliance status, partner information, and financial-development reporting.
 
+## Secrets and deployment configuration
+
+Do not commit API keys, service-account files, private keys, tokens, passwords, or generated credential/config files to this repository.
+
+Firebase Web SDK configuration is loaded from deployment environment variables:
+
+```text
+NEXT_PUBLIC_FIREBASE_API_KEY
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+NEXT_PUBLIC_FIREBASE_PROJECT_ID
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+NEXT_PUBLIC_FIREBASE_APP_ID
+NEXT_PUBLIC_FIREBASE_FIRESTORE_DATABASE_ID
+```
+
+Use `.env.example` only as a placeholder/template. Put real values in the deployment provider's environment-variable/secret store or a local ignored `.env` file. `firebase-applet-config.json`, Firebase Admin service-account JSON files, Google credential files, PEM files, and PKCS#12 files are intentionally ignored.
+
+Any credential that has ever been committed must be treated as exposed and rotated or revoked at its provider; deleting it from the current branch does not invalidate copies in Git history.
+
 ## ODC capital boundary
 
 Capital.OneGodian.com contains the financial, treasury, disclosure, allocation, and institutional-participation side of **OneGodian Digital Coin (ODC)**. It is not the authoritative ODC wallet, explorer, transaction processor, ledger, or technical node.
