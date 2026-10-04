@@ -16,7 +16,7 @@ export const productLines = {
     publicPath: '/zolfi',
     destination: 'odefi.onegodian.com/zolfi',
     description:
-      'Zolfi is ONEGODIAN Capital’s blockchain security, smart contract intelligence, and post-quantum readiness product line, powered by QRV Network infrastructure.',
+      'Zolfi is ODeFi™’s blockchain security, smart contract intelligence, and post-quantum readiness product line, powered by QRV Network infrastructure.',
     pillars: [
       'Blockchain security review',
       'Smart contract intelligence',
@@ -37,7 +37,7 @@ export const productLines = {
     publicPath: '/instryx',
     destination: 'odefi.onegodian.com/instryx',
     description:
-      'Instryx is ONEGODIAN Capital’s infrastructure intelligence, investment readiness, and execution analytics product line, powered by QRV Network infrastructure.',
+      'Instryx is ODeFi™’s infrastructure intelligence, investment readiness, and execution analytics product line, powered by QRV Network infrastructure.',
     pillars: [
       'Infrastructure readiness',
       'Investment readiness intelligence',
