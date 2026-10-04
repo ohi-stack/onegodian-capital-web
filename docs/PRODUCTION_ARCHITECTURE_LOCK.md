@@ -2,7 +2,7 @@
 
 ## Canonical role
 
-The ONEGODIAN Capital Web repository is the public Next.js surface for `capital.onegodian.com`.
+The ONEGODIAN Capital Web repository is the public Next.js surface for `odefi.onegodian.com`.
 
 It presents Capital product lines, public documentation, disclosures, readiness information, verification entry points, registry references, and approved dashboard surfaces. It does not independently approve an offering, investor, certificate, transaction, or legal status.
 
