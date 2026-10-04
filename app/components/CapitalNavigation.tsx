@@ -15,7 +15,7 @@ export default function CapitalNavigation() {
     <header className="capitalNav" aria-label="ONEGODIAN Capital Portal navigation">
       <div className="wrap capitalNavInner">
         <Link className="capitalBrand" href="/" aria-label="ONEGODIAN Capital Portal home">
-          ONEGODIAN CAPITAL PORTAL™
+          ODEFI™ PORTAL™
         </Link>
         <nav className="capitalLinks" aria-label="Primary navigation">
           {navItems.map((item) => (
