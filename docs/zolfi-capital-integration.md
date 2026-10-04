@@ -48,7 +48,7 @@ Recommended public/admin routes:
 Add Zolfi™ under Capital platform navigation as:
 
 ```text
-Capital Platform
+ODeFi Platform
 - Offerings
 - Disclosure Center
 - Investor Portal
