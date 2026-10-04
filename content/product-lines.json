@@ -1,7 +1,7 @@
 {
   "infrastructureMapping": {
-    "zolfiPublicPage": "https://capital.onegodian.com/zolfi",
-    "instryxPublicPage": "https://capital.onegodian.com/instryx",
+    "zolfiPublicPage": "https://odefi.onegodian.com/zolfi",
+    "instryxPublicPage": "https://odefi.onegodian.com/instryx",
     "zolfiApiBackend": "https://api.zolfi.qrv.network",
     "zolfiDeveloperDocs": "https://dev.zolfi.qrv.network",
     "zolfiMonitoring": "https://status.zolfi.qrv.network",
