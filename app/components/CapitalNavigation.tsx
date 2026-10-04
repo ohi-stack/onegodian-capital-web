@@ -12,10 +12,10 @@ const navItems = [
 
 export default function CapitalNavigation() {
   return (
-    <header className="capitalNav" aria-label="ONEGODIAN Capital Portal navigation">
+    <header className="capitalNav" aria-label="ODeFi navigation">
       <div className="wrap capitalNavInner">
-        <Link className="capitalBrand" href="/" aria-label="ONEGODIAN Capital Portal home">
-          ODEFI™ PORTAL™
+        <Link className="capitalBrand" href="/" aria-label="ODeFi home">
+          ODeFi™ Portal
         </Link>
         <nav className="capitalLinks" aria-label="Primary navigation">
           {navItems.map((item) => (
