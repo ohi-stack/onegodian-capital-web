@@ -161,7 +161,7 @@ export default async function CertificateDetailPage({
                 {provenanceHash}
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                Cryptographic signature anchored to the canonical OneGodian Capital state ledger. Tampering with certificate parameters automatically invalidates this hash.
+                Cryptographic signature anchored to the canonical ODeFi™ state ledger. Tampering with certificate parameters automatically invalidates this hash.
               </p>
             </div>
 

@@ -53,7 +53,7 @@ export const capitalPages: CapitalPage[] = [
     eyebrow: 'Flexible Work Infrastructure',
     summary:
       'The participation model for contributors, contractors, ambassadors, service providers, and task-based workers who may accept available opportunities on a flexible schedule.',
-    notice: 'Training and certifications should be managed through u.OneGodian.com. Capital.OneGodian.com tracks workforce infrastructure, disclosures, verification, and participation readiness.',
+    notice: 'Training and certifications should be managed through u.OneGodian.com. ODeFi.OneGodian.com tracks workforce infrastructure, disclosures, verification, and participation readiness.',
     sections: [
       {
         title: 'Contributor Categories',
@@ -98,7 +98,7 @@ export const capitalPages: CapitalPage[] = [
       {
         title: 'Infrastructure Objective',
         items: [
-          'Centralize economic development pages under Capital.OneGodian.com.',
+          'Centralize economic development pages under ODeFi.OneGodian.com.',
           'Keep training and certifications linked to u.OneGodian.com.',
           'Keep product checkout and service sales linked to OneGodian.com where appropriate.',
           'Keep verification and credential records connected to QRV.Network.',

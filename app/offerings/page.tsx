@@ -16,7 +16,7 @@ export default function OfferingsPage() {
           Capital Offerings & Digital Instruments
         </h1>
         <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
-          Capital offerings previously hosted on Capital.OneGodian.com are governed by mandatory electronic
+          Capital offerings on ODeFi.OneGodian.com are governed by mandatory electronic
           disclosure gates, participant eligibility review, and OBP-1™ cryptographic verification before any
           document or tokenized participation may proceed.
         </p>

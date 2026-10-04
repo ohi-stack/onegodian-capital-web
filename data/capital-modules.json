@@ -1,8 +1,8 @@
 {
   "id": "capital",
-  "name": "Capital.OneGodian.com",
+  "name": "ODeFi.OneGodian.com",
   "version": "0.1.0",
-  "host": "capital.onegodian.com",
+  "host": "odefi.onegodian.com",
   "runtime": "node-plus-wordpress-plugin",
   "role": "capital, disclosure, ODC, Zolfi, and Instryx consolidation node",
   "syncTarget": "https://app.onegodian.com",
@@ -27,7 +27,7 @@
       "route": "/zolfi",
       "status": "merge-required",
       "sourceRepo": "ohi-stack/zolfi-platform",
-      "purpose": "merge Zolfi platform functions into Capital.OneGodian.com"
+      "purpose": "merge Zolfi platform functions into ODeFi.OneGodian.com"
     },
     {
       "id": "instryx",
@@ -35,7 +35,7 @@
       "route": "/instryx",
       "status": "merge-required",
       "sourceRepo": "ohi-stack/instryx-financial-interface",
-      "purpose": "merge Instryx financial interface into Capital.OneGodian.com"
+      "purpose": "merge Instryx financial interface into ODeFi.OneGodian.com"
     },
     {
       "id": "capital-dashboard",

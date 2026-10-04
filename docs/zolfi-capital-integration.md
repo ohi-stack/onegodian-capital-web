@@ -1,15 +1,15 @@
-# Zolfi™ Integration for Capital.OneGodian.com
+# Zolfi™ Integration for ODeFi.OneGodian.com
 
 **Status:** Planning / implementation blueprint  
 **Date:** 2026-05-21  
 **Owner:** ONEGODIAN, LLC commercial/IP/software context  
-**Target site:** `capital.onegodian.com`
+**Target site:** `odefi.onegodian.com`
 
 ## Purpose
 
-Zolfi™ is merged into `capital.onegodian.com` as the commercial, investor-facing, and capital-access node for blockchain security, financial interface, smart contract support, and trust infrastructure services.
+Zolfi™ is merged into `odefi.onegodian.com` as the commercial, investor-facing, and capital-access node for blockchain security, financial interface, smart contract support, and trust infrastructure services.
 
-Capital.OneGodian.com should present Zolfi™ as a productized capability inside the OneGodian Capital ecosystem, not as a separate governance body.
+ODeFi.OneGodian.com should present Zolfi™ as a productized capability inside the ODeFi™ ecosystem, not as a separate governance body.
 
 ## Positioning
 
@@ -48,7 +48,7 @@ Recommended public/admin routes:
 Add Zolfi™ under Capital platform navigation as:
 
 ```text
-Capital Platform
+ODeFi Platform
 - Offerings
 - Disclosure Center
 - Investor Portal
@@ -76,7 +76,7 @@ Capital Platform
 
 ## Data boundaries
 
-Capital.OneGodian.com may expose:
+ODeFi.OneGodian.com may expose:
 
 - public product descriptions;
 - commercial offers;
@@ -85,7 +85,7 @@ Capital.OneGodian.com may expose:
 - high-level technical diagrams;
 - verified records and certificate links.
 
-Capital.OneGodian.com should not expose:
+ODeFi.OneGodian.com should not expose:
 
 - private keys;
 - wallet seed phrases;
@@ -107,11 +107,11 @@ Capital.OneGodian.com should not expose:
 
 ## Disclosure language
 
-Zolfi™ materials on Capital.OneGodian.com are provided by ONEGODIAN, LLC for software, infrastructure, education, documentation, and commercial platform development. Nothing on the page should be presented as legal, investment, tax, banking, securities, or governmental advice unless reviewed and approved through the appropriate professional process.
+Zolfi™ materials on ODeFi.OneGodian.com are provided by ONEGODIAN, LLC for software, infrastructure, education, documentation, and commercial platform development. Nothing on the page should be presented as legal, investment, tax, banking, securities, or governmental advice unless reviewed and approved through the appropriate professional process.
 
 ## Definition of done
 
-Zolfi™ is considered merged into Capital.OneGodian.com only when:
+Zolfi™ is considered merged into ODeFi.OneGodian.com only when:
 
 1. the `/zolfi` page exists;
 2. navigation links to it;

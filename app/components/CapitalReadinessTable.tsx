@@ -16,7 +16,7 @@ export default function CapitalReadinessTable() {
         <div className="eyebrow">Production Status</div>
         <h2>Capital Infrastructure Readiness</h2>
         <p className="lead">
-          Current operating maturity estimate for the capital.onegodian.com Hostinger Node application.
+          Current operating maturity estimate for the odefi.onegodian.com Hostinger Node application.
         </p>
 
         <div className="table-wrap" style={{ marginTop: 28 }}>

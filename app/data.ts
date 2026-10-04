@@ -87,10 +87,10 @@ export const capitalProductLines: ProductLine[] = [
     name: 'Zolfi',
     slug: 'zolfi',
     positioning:
-      'ONEGODIAN Capital’s blockchain security, smart contract intelligence, and post-quantum readiness product line.',
+      'ODeFi™’s blockchain security, smart contract intelligence, and post-quantum readiness product line.',
     summary:
-      'Zolfi organizes blockchain security review, smart contract intelligence, verification workflows, and post-quantum readiness planning under ONEGODIAN Capital.',
-    publicUrl: 'https://capital.onegodian.com/zolfi',
+      'Zolfi organizes blockchain security review, smart contract intelligence, verification workflows, and post-quantum readiness planning under ODeFi™.',
+    publicUrl: 'https://odefi.onegodian.com/zolfi',
     apiLayer: 'https://api.zolfi.qrv.network',
     docsLayer: 'https://dev.zolfi.qrv.network',
     statusLayer: 'https://status.zolfi.qrv.network',
@@ -101,10 +101,10 @@ export const capitalProductLines: ProductLine[] = [
     name: 'Instryx',
     slug: 'instryx',
     positioning:
-      'ONEGODIAN Capital’s infrastructure intelligence, investment readiness, and execution analytics product line.',
+      'ODeFi™’s infrastructure intelligence, investment readiness, and execution analytics product line.',
     summary:
-      'Instryx supports capital infrastructure review, investment readiness tracking, investor intelligence, and execution analytics under ONEGODIAN Capital.',
-    publicUrl: 'https://capital.onegodian.com/instryx',
+      'Instryx supports capital infrastructure review, investment readiness tracking, investor intelligence, and execution analytics under ODeFi™.',
+    publicUrl: 'https://odefi.onegodian.com/instryx',
     verificationLayer: 'https://verify.qrv.network',
     registryLayer: 'https://registry.qrv.network',
   },
@@ -117,7 +117,7 @@ export const certificates: CertificateRecord[] = [
     instrument: 'ONEGODIAN Founder Note™',
     status: 'Verified',
     issued: 'Pending production issuance',
-    verificationUrl: 'https://capital.onegodian.com/certificates/OGC-CERT-0001',
+    verificationUrl: 'https://odefi.onegodian.com/certificates/OGC-CERT-0001',
   },
   {
     id: 'OGC-CERT-0002',
@@ -125,7 +125,7 @@ export const certificates: CertificateRecord[] = [
     instrument: 'ONEGODIAN Infrastructure Bond™',
     status: 'Pending',
     issued: 'Awaiting disclosure acceptance',
-    verificationUrl: 'https://capital.onegodian.com/certificates/OGC-CERT-0002',
+    verificationUrl: 'https://odefi.onegodian.com/certificates/OGC-CERT-0002',
   },
 ];
 
@@ -151,17 +151,17 @@ export const ledgerEntries: LedgerEntry[] = [
   {
     date: 'Product Lines',
     reference: 'CAP-LEDGER-004',
-    activity: 'Zolfi and Instryx merged into Capital Portal as ONEGODIAN Capital product lines',
+    activity: 'Zolfi and Instryx merged into Capital Portal as ODeFi™ product lines',
     status: 'Active routing',
   },
 ];
 
 export const readinessItems = [
-  ['Hostinger Node Deployment', 'Active', 'capital.onegodian.com is operating as the Node/Next.js capital interface.'],
+  ['Hostinger Node Deployment', 'Active', 'odefi.onegodian.com is operating as the Node/Next.js capital interface.'],
   ['Public Offerings UI', 'Improved', 'Offering cards, instrument metadata, disclosure notices, and status badges are rendered.'],
   ['Investor Portal UI', 'Improved', 'Dashboard cards, certificate records, ledger entries, and next-step actions are rendered.'],
-  ['Zolfi Product Line', 'Active Routing', 'Zolfi is presented at /zolfi as a ONEGODIAN Capital product line powered by QRV Network infrastructure.'],
-  ['Instryx Product Line', 'Active Routing', 'Instryx is presented at /instryx as a ONEGODIAN Capital product line powered by QRV Network infrastructure.'],
+  ['Zolfi Product Line', 'Active Routing', 'Zolfi is presented at /zolfi as a ODeFi™ product line powered by QRV Network infrastructure.'],
+  ['Instryx Product Line', 'Active Routing', 'Instryx is presented at /instryx as a ODeFi™ product line powered by QRV Network infrastructure.'],
   ['Database/API Bridge', 'Planned Integration', 'Live API, Prisma/PostgreSQL, and webhook processing remain part of the controlled deployment roadmap.'],
   ['WooCommerce Bridge', 'Planned Integration', 'Checkout-only product linkage and post-disclosure certificate issuance remain part of the controlled deployment roadmap.'],
 ];

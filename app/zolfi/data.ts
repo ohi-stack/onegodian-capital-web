@@ -76,13 +76,13 @@ export const zolfiApiRoutes = ['/api/zolfi/status', '/api/zolfi/manifest'];
 export const zolfiRoutes = [...zolfiPrimaryRoutes, ...zolfiModuleRoutes, ...zolfiApiRoutes];
 
 export const zolfiDisclosure =
-  'Zolfi™ materials on Capital.OneGodian.com are provided by ONEGODIAN, LLC for software, infrastructure, education, documentation, and commercial platform development. Nothing on this page is legal, investment, tax, banking, securities, or governmental advice. Any regulated activity requires appropriate professional review and separate written approval.';
+  'Zolfi™ materials on ODeFi.OneGodian.com are provided by ONEGODIAN, LLC for software, infrastructure, education, documentation, and commercial platform development. Nothing on this page is legal, investment, tax, banking, securities, or governmental advice. Any regulated activity requires appropriate professional review and separate written approval.';
 
 export const zolfiManifest = {
   id: 'zolfi-capital',
   name: 'Zolfi™ Capital Integration',
   status: 'implemented',
-  host: 'capital.onegodian.com',
+  host: 'odefi.onegodian.com',
   owner: 'ONEGODIAN, LLC',
   classification: 'commercial software, blockchain security, verification, and capital infrastructure support layer',
   routes: zolfiRoutes,

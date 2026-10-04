@@ -1,20 +1,20 @@
 {
   "infrastructureMapping": {
-    "zolfiPublicPage": "https://capital.onegodian.com/zolfi",
-    "instryxPublicPage": "https://capital.onegodian.com/instryx",
+    "zolfiPublicPage": "https://odefi.onegodian.com/zolfi",
+    "instryxPublicPage": "https://odefi.onegodian.com/instryx",
     "zolfiApiBackend": "https://api.zolfi.qrv.network",
     "zolfiDeveloperDocs": "https://dev.zolfi.qrv.network",
     "zolfiMonitoring": "https://status.zolfi.qrv.network",
     "verification": "https://verify.qrv.network",
     "registryProofLayer": "https://registry.qrv.network"
   },
-  "disclosureNotice": "All capital participation requires disclosure review and acknowledgement. Zolfi and Instryx are ONEGODIAN Capital product lines powered by QRV Network infrastructure and are not standalone public destinations.",
+  "disclosureNotice": "All capital participation requires disclosure review and acknowledgement. Zolfi and Instryx are ODeFi™ product lines powered by QRV Network infrastructure and are not standalone public destinations.",
   "productLines": [
     {
       "slug": "zolfi",
       "name": "Zolfi",
-      "headline": "Blockchain security, smart contract intelligence, and post-quantum readiness for ONEGODIAN Capital.",
-      "positioning": "Zolfi is ONEGODIAN Capital’s blockchain security, smart contract intelligence, and post-quantum readiness product line, powered by QRV Network infrastructure.",
+      "headline": "Blockchain security, smart contract intelligence, and post-quantum readiness for ODeFi™.",
+      "positioning": "Zolfi is ODeFi™’s blockchain security, smart contract intelligence, and post-quantum readiness product line, powered by QRV Network infrastructure.",
       "publicDestination": "/zolfi",
       "sections": [
         { "label": "Security", "path": "/zolfi/security", "description": "Security review, protocol risk mapping, wallet-risk awareness, and blockchain infrastructure controls." },
@@ -31,8 +31,8 @@
     {
       "slug": "instryx",
       "name": "Instryx",
-      "headline": "Infrastructure intelligence, investment readiness, and execution analytics for ONEGODIAN Capital.",
-      "positioning": "Instryx is ONEGODIAN Capital’s infrastructure intelligence, investment readiness, and execution analytics product line, powered by QRV Network verification and registry infrastructure.",
+      "headline": "Infrastructure intelligence, investment readiness, and execution analytics for ODeFi™.",
+      "positioning": "Instryx is ODeFi™’s infrastructure intelligence, investment readiness, and execution analytics product line, powered by QRV Network verification and registry infrastructure.",
       "publicDestination": "/instryx",
       "sections": [
         { "label": "Readiness", "path": "/instryx/readiness", "description": "Capital readiness scoring, documentation status, disclosure workflow checks, and operational preparation." },

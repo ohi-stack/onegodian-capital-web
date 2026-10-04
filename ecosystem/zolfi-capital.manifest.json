@@ -6,7 +6,7 @@
     "ohi-stack/zolfi-platform",
     "ohi-stack/instryx-financial-interface"
   ],
-  "role": "technical execution layer for Capital.OneGodian.com",
+  "role": "technical execution layer for ODeFi.OneGodian.com",
   "modules": {
     "zolfiCore": true,
     "zolfiBuildConsole": true,
