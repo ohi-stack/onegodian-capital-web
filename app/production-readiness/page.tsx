@@ -10,7 +10,7 @@ const layerStatus = [
   ['Canonical Asset Layer (ODC™)', 'Mainnet Deployed', 'ERC-20 smart contract deployed at 0x9eee...ce98 (Chain ID: 1).'],
   ['Provenance & Verification (OBP-1™)', 'Active', 'Verifiable certificate lookup with cryptographic provenance audit hashing.'],
   ['Disclosure Gate Engine', 'Active & Enforced', 'Electronic disclosure acceptance with Firestore audit logging.'],
-  ['Canonical Consolidation', 'Active', 'ODeFi.OneGodian.com consolidated under ODeFi.OneGodian.com authority.'],
+  ['Canonical Consolidation', 'Active', 'Legacy capital-host functions consolidated under ODeFi.OneGodian.com authority.'],
 ];
 
 export default function ProductionReadinessPage() {
