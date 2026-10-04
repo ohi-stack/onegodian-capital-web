@@ -1,10 +1,10 @@
 # Capital Platform Structure
 
-Production target: `capital.onegodian.com`
+Production target: `odefi.onegodian.com`
 
 ## Role
 
-Capital.OneGodian.com is the disclosure, finance, contribution, and capital infrastructure layer.
+ODeFi.OneGodian.com is the disclosure, finance, contribution, and capital infrastructure layer.
 
 This property must maintain:
 
@@ -19,7 +19,7 @@ This property must maintain:
 |---|---|
 | `zolfi-platform` | financial interfaces and platform tooling |
 | `instryx-financial-interface` | financial workflows and infrastructure |
-| `onegodian-capital-plugin` | WordPress/plugin bridge |
+| `odefi-plugin` | WordPress/plugin bridge |
 | `qrv-verify` | verification and credential validation |
 | `onegodian-app` | ecosystem visibility |
 
