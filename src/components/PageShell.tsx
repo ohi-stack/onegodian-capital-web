@@ -53,7 +53,7 @@ export default function PageShell({ children }: Readonly<{ children: React.React
         <div className="site-header-inner">
           <Link className="brand brand-logo" href="/" aria-label="ONEGODIAN Capital home">
             <Image
-              src="/onegodian-capital-logo.svg"
+              src="/odefi-logo.svg"
               alt="ONEGODIAN Capital Portal"
               width={560}
               height={160}
@@ -77,7 +77,7 @@ export default function PageShell({ children }: Readonly<{ children: React.React
         <div className="site-footer-inner footer-grid">
           <div className="footer-brand">
             <Image
-              src="/onegodian-capital-logo.svg"
+              src="/odefi-logo.svg"
               alt="ONEGODIAN Capital Portal"
               width={360}
               height={103}
