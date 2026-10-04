@@ -1,6 +1,6 @@
-# OneGodian Capital Web
+# ODeFi™ Web
 
-Dedicated Next.js frontend for **capital.onegodian.com**, covering capital participation, disclosures, institutional records, certificates, compliance status, partner information, and financial-development reporting.
+Dedicated Next.js frontend for **odefi.onegodian.com**, covering capital participation, disclosures, institutional records, certificates, compliance status, partner information, and financial-development reporting.
 
 ## Secrets and deployment configuration
 
@@ -24,7 +24,7 @@ Any credential that has ever been committed must be treated as exposed and rotat
 
 ## ODC capital boundary
 
-Capital.OneGodian.com contains the financial, treasury, disclosure, allocation, and institutional-participation side of **OneGodian Digital Coin (ODC)**. It is not the authoritative ODC wallet, explorer, transaction processor, ledger, or technical node.
+ODeFi.OneGodian.com contains the financial, treasury, disclosure, allocation, and institutional-participation side of **OneGodian Digital Coin (ODC)**. It is not the authoritative ODC wallet, explorer, transaction processor, ledger, or technical node.
 
 Authoritative operational node:
 
@@ -80,7 +80,7 @@ onegodian.com/odc
 odc.onegodian.com
 └── ODC application, wallet, explorer, APIs, registry, and utility
 
-capital.onegodian.com/odc
+odefi.onegodian.com/odc
 └── ODC economics, treasury, disclosures, reports, and partnerships
 
 OneGodian ODC Plugin
