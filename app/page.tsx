@@ -302,7 +302,7 @@ export default function HomePage() {
                 Verified Capital Offerings
               </h2>
               <p className="text-xs text-slate-400 mt-1 max-w-xl">
-                Structured notes, bonds, and participation ledgers previously on Capital.OneGodian.com,
+                Structured notes, bonds, and participation ledgers previously on ODeFi.OneGodian.com,
                 now consolidated under ODeFi canonical recordkeeping.
               </p>
             </div>
