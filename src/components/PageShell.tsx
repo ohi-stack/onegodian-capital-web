@@ -51,10 +51,10 @@ export default function PageShell({ children }: Readonly<{ children: React.React
     <div className="site-shell">
       <header className="site-header">
         <div className="site-header-inner">
-          <Link className="brand brand-logo" href="/" aria-label="ONEGODIAN Capital home">
+          <Link className="brand brand-logo" href="/" aria-label="ODeFi home">
             <Image
               src="/odefi-logo.svg"
-              alt="ONEGODIAN Capital Portal"
+              alt="ODeFi"
               width={560}
               height={160}
               priority
@@ -78,7 +78,7 @@ export default function PageShell({ children }: Readonly<{ children: React.React
           <div className="footer-brand">
             <Image
               src="/odefi-logo.svg"
-              alt="ONEGODIAN Capital Portal"
+              alt="ODeFi"
               width={360}
               height={103}
             />
