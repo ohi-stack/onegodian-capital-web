@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "onegodian-capital-web",
+      "name": "odefi-web",
       "dependencies": {
         "@tailwindcss/postcss": "^4.3.3",
         "@types/qrcode": "^1.5.6",
