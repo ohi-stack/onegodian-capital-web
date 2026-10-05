@@ -1,8 +1,8 @@
 {
-  "name": "odefi-web",
+  "name": "onegodian-capital-legacy-web",
   "version": "0.1.0",
   "private": true,
-  "description": "Dedicated Next.js frontend for odefi.onegodian.com: offerings, disclosures, investor portal, certificates, compliance status, and support.",
+  "description": "Legacy Capital.OneGodian.com compatibility and migration surface. Canonical active financial application: ODeFi.OneGodian.com.",
   "scripts": {
     "dev": "next dev",
     "build": "NODE_ENV=production next build",
