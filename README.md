@@ -1,97 +1,75 @@
-# ODeFi™ Web
+# Capital.OneGodian.com — Legacy ODeFi Compatibility Surface
 
-Dedicated Next.js frontend for **odefi.onegodian.com**, covering capital participation, disclosures, institutional records, certificates, compliance status, partner information, and financial-development reporting.
+This repository preserves the former Capital web application while its active financial-platform responsibilities are consolidated into **ODeFi™ at ODeFi.OneGodian.com**.
 
-## Secrets and deployment configuration
+## Canonical platform boundary
 
-Do not commit API keys, service-account files, private keys, tokens, passwords, or generated credential/config files to this repository.
+**Canonical active application:** `ohi-stack/odefi-onegodian`  
+**Canonical domain:** `https://odefi.onegodian.com`  
+**Legacy domain:** `https://capital.onegodian.com`
 
-Firebase Web SDK configuration is loaded from deployment environment variables:
+Capital.OneGodian.com must not be developed as a competing finance platform. Its permitted future role is limited to an approved redirect, archive, compatibility surface, or narrowly scoped disclosure endpoint.
 
-```text
-NEXT_PUBLIC_FIREBASE_API_KEY
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-NEXT_PUBLIC_FIREBASE_PROJECT_ID
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-NEXT_PUBLIC_FIREBASE_APP_ID
-NEXT_PUBLIC_FIREBASE_FIRESTORE_DATABASE_ID
-```
-
-Use `.env.example` only as a placeholder/template. Put real values in the deployment provider's environment-variable/secret store or a local ignored `.env` file. `firebase-applet-config.json`, Firebase Admin service-account JSON files, Google credential files, PEM files, and PKCS#12 files are intentionally ignored.
-
-Any credential that has ever been committed must be treated as exposed and rotated or revoked at its provider; deleting it from the current branch does not invalidate copies in Git history.
-
-## ODC capital boundary
-
-ODeFi.OneGodian.com contains the financial, treasury, disclosure, allocation, and institutional-participation side of **OneGodian Digital Coin (ODC)**. It is not the authoritative ODC wallet, explorer, transaction processor, ledger, or technical node.
-
-Authoritative operational node:
-
-- `https://odc.onegodian.com`
-
-Capital presentation routes:
+ODeFi owns the unified application surface for:
 
 ```text
-/odc
-/odc/economic-model
-/odc/token-allocation
-/odc/treasury
-/odc/liquidity
-/odc/disclosures
-/odc/smart-contract
-/odc/obp-1
-/odc/reports
-/odc/partners
+Identity → Verification → Registry → Wallet → Assets → Transactions
+→ Payments → Merchant Services → Protocol → Treasury → Capital
+→ Reporting → Compliance → Developer Infrastructure
 ```
 
-## ODC responsibilities
+Shared ecosystem services, connectors, registries, analytics, webhooks, and MCP interoperability remain upstream through `api.OneGodian.org`. Canonical ODC contract/source authority remains outside this legacy repository.
 
-Capital Web may present:
+## Legacy route migration map
 
-- ODC capital overview;
-- economic-model documentation;
-- confirmed allocation disclosures;
-- treasury and wallet disclosures;
-- circulating-supply methodology;
-- liquidity disclosures;
-- development-funding use;
-- risk and legal disclosures;
-- OBP-1™ verified capital records;
-- institutional and strategic-partner information; and
-- approved financial or governance reports.
+| Capital route | Canonical ODeFi destination | Legacy treatment |
+| --- | --- | --- |
+| `/` | `https://odefi.onegodian.com/` | Redirect/legacy notice when approved |
+| `/investor-portal` | `/capital` or approved participation surface | Compliance-gated |
+| `/offerings` | `/capital` / `/participation` | Compliance-gated; no automatic activation |
+| `/disclosures` | `/disclosures` | Preserve/migrate |
+| `/certificates` | `/dashboard/certificates` / verification | Preserve records; ODeFi UI |
+| `/registry` | `/records` / public verification | ODIN/OBP-1 remain authoritative upstream |
+| `/production-readiness` | `/status` / compliance documentation | Preserve as historical evidence |
+| `/odc/*` | `/assets`, `/odc`, disclosures/reports as applicable | Canonical asset metadata only |
 
-Capital Web must not independently:
+The exact redirect/archive behavior must be deployment-approved before changing the live Capital domain.
 
-- alter ODC balances;
-- custody wallet private keys;
+## Financial feature gates
+
+The existence of a page, route, component, environment variable, or migrated source file does **not** activate financial functionality.
+
+Transactions, payments, swaps, liquidity, staking, rewards, yield, lending, custody, exchange functionality, capital participation, and tokenized investment functionality remain disabled unless separately activated after applicable technical, legal, compliance, security, and production review.
+
+Authentication alone does not grant authorization to gated finance capabilities.
+
+## Verification boundary
+
+Capital must not fabricate OBP-1™, ODIN™, QR-V™, transaction, balance, certificate, or production evidence.
+
+Verification must fail closed when authoritative evidence cannot be confirmed. ODeFi consumes verification through documented adapters; this legacy repository is not a verification authority.
+
+## ODC boundary
+
+Do not silently change deployed ODC facts. Current canonical deployment facts must be sourced from the authoritative ODC repository/service before presentation.
+
+This repository must not independently:
+- alter asset balances;
+- custody private keys or seed/recovery phrases;
 - authorize blockchain transactions;
-- operate as the canonical token ledger;
-- imply that ODC is a security or non-security without qualified legal analysis;
-- guarantee liquidity, value, appreciation, yield, or redemption; or
+- become the canonical token ledger;
+- guarantee liquidity, value, appreciation, yield, recovery, regulatory approval, or insurance; or
 - publish unconfirmed allocation, treasury, sale, or liquidity figures as facts.
 
-## System architecture
+## Status
 
-```text
-onegodian.com/odc
-└── Mainstream public introduction
+**Legacy Capital application: Under Review / migration compatibility**  
+**ODeFi canonical application: In Development unless current production evidence establishes a higher status**
 
-odc.onegodian.com
-└── ODC application, wallet, explorer, APIs, registry, and utility
-
-odefi.onegodian.com/odc
-└── ODC economics, treasury, disclosures, reports, and partnerships
-
-OneGodian ODC Plugin
-└── WordPress and WooCommerce integration bridge
-
-OBP-1™
-└── Provenance, integrity, version, and registry verification
-```
+No migrated capability becomes Live or Production solely because code or documentation exists.
 
 ## Production rule
 
-A financial figure, allocation, liquidity claim, treasury record, participation workflow, or verification badge must not be described as live or confirmed unless it is operational, documented, reviewed, and repeatable.
+If a capability is not operational, documented, tested, secured, verified, and repeatable, it does not exist in the current production version.
 
 © ONEGODIAN, LLC. All rights reserved.
